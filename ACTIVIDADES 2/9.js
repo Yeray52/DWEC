@@ -1,8 +1,10 @@
-let numero = prompt("Introduce un número")
+let numero = Number(prompt("Introduce el número"))
+let multiplicador = 2
+let factorial = 1
 
-while (numero != 0){
-    suma = parseFloat(suma) + parseFloat(numero)
-    numero = prompt("Introduce número a sumar")
-    }
+while (multiplicador <= numero) {
+    factorial = factorial *  multiplicador
+    multiplicador = multiplicador + 1
+}
 
-alert(texto)
+alert(factorial)
