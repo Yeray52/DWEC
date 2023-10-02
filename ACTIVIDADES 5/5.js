@@ -2,10 +2,10 @@ let nombre = prompt("Introduce tu nombre")
 let apellidos = prompt("Introduce tus apellidos")
 let salario = parseFloat(prompt("Introduce tu salario"))
 let edad = Number(prompt("Introduce tu edad"))
-let aumento, salarioSumado, salarioFinal
+let aumento, salarioExtra
 
 
-if(salario >= 1000 || salario <= 2000)
+if(salario >= 1000 && salario <= 2000)
 {
     if(edad > 45){
         aumento = 3
@@ -18,6 +18,7 @@ else if(salario < 1000)
 {
     if(edad < 30){
         salario = 1100
+        aumento = 0
     }
     else if(edad >= 30 && edad <= 45){
         aumento = 3
@@ -26,8 +27,11 @@ else if(salario < 1000)
         aumento = 15
     }
 }
+else if(salario > 2000)
+{
+    aumento = 0
+}
 
-salarioSumado = (aumento / 100) * salario
-salarioFinal = (parseFloat(salario) + parseFloat(salarioSumado))
+salarioExtra = (aumento / 100) * salario
 
-alert("Hola, " + nombre + " " + apellidos + ", tu salario final es de " + salarioFinal + " euros")
+alert("Hola, " + nombre + " " + apellidos + ", tu salario final es de " + (salario + salarioExtra) + " euros")
